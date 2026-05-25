@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+aiogram
+sqlalchemy
+pymysql
+redis
+python-dotenv

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9600dff8-515a-4546-af7e-8c1359d3b582" name="Changes" comment="клиент -&gt; сервер">
+      <change afterPath="$PROJECT_DIR$/.dockeringnore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/adminka.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/default.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/default.conf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="24" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Dockerfile" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ggngts&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ggngts/mpfood.git&quot;,
+    &quot;accountId&quot;: &quot;9f0f7582-37cd-4c28-bf90-2761a03fb32d&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3DgEFfHlqRuLG3eNzg2frWt6hpx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "latest__branch",
+    "junie.onboarding.icon.badge.shown": "true",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-1cd77e80b48f-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.32098.74" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9600dff8-515a-4546-af7e-8c1359d3b582" name="Changes" comment="" />
+      <created>1778695211662</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778695211662</updated>
+    </task>
+    <task id="LOCAL-00001" summary="git commit">
+      <option name="closed" value="true" />
+      <created>1779379931602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779379931602</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git commit">
+      <option name="closed" value="true" />
+      <created>1779380221587</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1779380221587</updated>
+    </task>
+    <task id="LOCAL-00003" summary="git commit">
+      <option name="closed" value="true" />
+      <created>1779380401877</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779380401877</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gadem letsgo">
+      <option name="closed" value="true" />
+      <created>1779381051439</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779381051439</updated>
+    </task>
+    <task id="LOCAL-00005" summary="prerel">
+      <option name="closed" value="true" />
+      <created>1779382500754</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779382500754</updated>
+    </task>
+    <task id="LOCAL-00006" summary="release">
+      <option name="closed" value="true" />
+      <created>1779384226985</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779384226985</updated>
+    </task>
+    <task id="LOCAL-00007" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779660858641</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779660858641</updated>
+    </task>
+    <task id="LOCAL-00008" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779661293830</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779661293830</updated>
+    </task>
+    <task id="LOCAL-00009" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779661379749</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779661379749</updated>
+    </task>
+    <task id="LOCAL-00010" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779661894310</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779661894310</updated>
+    </task>
+    <task id="LOCAL-00011" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779662243558</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779662243558</updated>
+    </task>
+    <task id="LOCAL-00012" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779662436515</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779662436515</updated>
+    </task>
+    <task id="LOCAL-00013" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779662460255</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1779662460255</updated>
+    </task>
+    <task id="LOCAL-00014" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779662603264</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779662603264</updated>
+    </task>
+    <task id="LOCAL-00015" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779662690114</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779662690114</updated>
+    </task>
+    <task id="LOCAL-00016" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779662968676</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1779662968676</updated>
+    </task>
+    <task id="LOCAL-00017" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779663423421</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1779663423421</updated>
+    </task>
+    <task id="LOCAL-00018" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779665061629</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1779665061629</updated>
+    </task>
+    <task id="LOCAL-00019" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779665391576</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1779665391576</updated>
+    </task>
+    <task id="LOCAL-00020" summary="клиент -&gt; серв">
+      <option name="closed" value="true" />
+      <created>1779665579608</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1779665579608</updated>
+    </task>
+    <task id="LOCAL-00021" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779674588929</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1779674588929</updated>
+    </task>
+    <task id="LOCAL-00022" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779674666869</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1779674666869</updated>
+    </task>
+    <task id="LOCAL-00023" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779674827982</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1779674827982</updated>
+    </task>
+    <task id="LOCAL-00024" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779675129512</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1779675129512</updated>
+    </task>
+    <task id="LOCAL-00025" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779675355706</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1779675355706</updated>
+    </task>
+    <task id="LOCAL-00026" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779675705664</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1779675705664</updated>
+    </task>
+    <task id="LOCAL-00027" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779675900980</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1779675900980</updated>
+    </task>
+    <task id="LOCAL-00028" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779676090451</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1779676090451</updated>
+    </task>
+    <task id="LOCAL-00029" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779676115216</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1779676115216</updated>
+    </task>
+    <task id="LOCAL-00030" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779678080583</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1779678080583</updated>
+    </task>
+    <task id="LOCAL-00031" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779678468213</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1779678468213</updated>
+    </task>
+    <task id="LOCAL-00032" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779678733385</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1779678733385</updated>
+    </task>
+    <task id="LOCAL-00033" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779678840610</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1779678840610</updated>
+    </task>
+    <task id="LOCAL-00034" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779679544436</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1779679544436</updated>
+    </task>
+    <task id="LOCAL-00035" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779735546298</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1779735546298</updated>
+    </task>
+    <task id="LOCAL-00036" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779735892246</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1779735892246</updated>
+    </task>
+    <task id="LOCAL-00037" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779737010893</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1779737010893</updated>
+    </task>
+    <task id="LOCAL-00038" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779737118600</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1779737118600</updated>
+    </task>
+    <task id="LOCAL-00039" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779737245042</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1779737245042</updated>
+    </task>
+    <task id="LOCAL-00040" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779738376405</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1779738376405</updated>
+    </task>
+    <task id="LOCAL-00041" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779738537110</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1779738537110</updated>
+    </task>
+    <task id="LOCAL-00042" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779738647270</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1779738647270</updated>
+    </task>
+    <task id="LOCAL-00043" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779738877142</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1779738877142</updated>
+    </task>
+    <task id="LOCAL-00044" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779738992972</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1779738992972</updated>
+    </task>
+    <task id="LOCAL-00045" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779739094834</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1779739094834</updated>
+    </task>
+    <task id="LOCAL-00046" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779739186203</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1779739186203</updated>
+    </task>
+    <task id="LOCAL-00047" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779739315211</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1779739315211</updated>
+    </task>
+    <task id="LOCAL-00048" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779739331830</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1779739331830</updated>
+    </task>
+    <task id="LOCAL-00049" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1779739558592</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1779739558592</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="default.conf" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git commit" />
+    <MESSAGE value="gadem letsgo" />
+    <MESSAGE value="prerel" />
+    <MESSAGE value="release" />
+    <MESSAGE value="клиент -&gt; серв" />
+    <MESSAGE value="клиент -&gt; сервер" />
+    <option name="LAST_COMMIT_MESSAGE" value="клиент -&gt; сервер" />
+  </component>
+</project>

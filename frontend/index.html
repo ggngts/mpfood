@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MPFood Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Привет, <span id="username">Гурман</span>! 👋</h1>
+        <p class="hint-text">Выбирай самые вкусные блюда</p>
+    </header>
+
+    <nav class="tabs-container">
+        <button class="tab-btn active" onclick="switchTab(event, 'pizza-section')">Пицца</button>
+        <button class="tab-btn" onclick="switchTab(event, 'sushi-section')">Суши</button>
+        <button class="tab-btn" onclick="switchTab(event, 'drinks-section')">Напитки</button>
+    </nav>
+
+    <main class="content-container">
+        
+        <section id="pizza-section" class="tab-content active">
+            </section>
+
+        <section id="sushi-section" class="tab-content">
+            </section>
+
+        <section id="drinks-section" class="tab-content">
+            </section>
+
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.git
+frontend/
+nginx/
+mysql_data/
+.env
+README.md
