@@ -7,7 +7,7 @@ from typing import List
 from sqlalchemy.orm import Session
 
 from backend.db import engine, Base, get_db
-from backend.models import Product, Order, OrderItem
+import backend.models as models
 
 load_dotenv()
 
