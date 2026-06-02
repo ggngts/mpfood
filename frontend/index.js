@@ -3,9 +3,9 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-let cart = [];
+const API_BASE = "";
 
-tg.MainButton.text = "Оформить заказ";
+let cart = [];
 
 function switchTab(event, sectionId) {
     const contents = document.querySelectorAll('.tab-content');
@@ -16,7 +16,7 @@ function switchTab(event, sectionId) {
 
     document.getElementById(sectionId).classList.add('active');
     event.currentTarget.classList.add('active');
-    
+
     if (tg.HapticFeedback) {
         tg.HapticFeedback.impactOccurred('light');
     }
@@ -24,26 +24,32 @@ function switchTab(event, sectionId) {
 
 async function loadMenu() {
     try {
-        const response = await fetch('/api/products');
+        const response = await fetch(`${API_BASE}/api/products`);
         if (!response.ok) {
             throw new Error('Не удалось загрузить товары с сервера');
         }
-        
+
         const products = await response.json();
 
         document.getElementById('pizza-section').innerHTML = '';
         document.getElementById('sushi-section').innerHTML = '';
         document.getElementById('drinks-section').innerHTML = '';
 
+        if (products.length === 0) {
+            const emptyMsg = "<p class='hint-text' style='text-align:center; padding:20px;'>Меню временно пусто. Добавьте товары в БД!</p>";
+            document.getElementById('pizza-section').innerHTML = emptyMsg;
+            return;
+        }
+
         products.forEach(product => {
             const cardHtml = `
                 <div class="food-card">
                     <div class="food-info">
                         <h3>${product.name}</h3>
-                        <p class="hint-text">${product.description}</p>
-                        <span class="price">${product.price} ₽</span>
+                        <p class="hint-text">${product.description || ''}</p>
+                        <span class="price">${product.price} Stars</span>
                     </div>
-                    <button class="add-btn" onclick="addToCart('${product.id}', ${product.price})">Добавить</button>
+                    <button class="add-btn" onclick="addToCart(${product.id}, ${product.price})">Добавить</button>
                 </div>
             `;
 
@@ -62,24 +68,12 @@ async function loadMenu() {
     }
 }
 
-function initApp() {
-    const user = tg.initDataUnsafe?.user;
-    if (user) {
-        const userNameElement = document.getElementById('username');
-        if (userNameElement) {
-            userNameElement.innerText = user.first_name || 'Гурман';
-        }
-    }
-
-    loadMenu();
-}
-
 function addToCart(itemId, price) {
     cart.push({ id: itemId, price: price });
-    
+
     const totalSum = cart.reduce((sum, item) => sum + item.price, 0);
 
-    tg.MainButton.text = `Оформить заказ (${totalSum} ₽)`;
+    tg.MainButton.text = `Оформить заказ (${totalSum} Stars)`;
     if (!tg.MainButton.isVisible) {
         tg.MainButton.show();
     }
@@ -90,50 +84,61 @@ function addToCart(itemId, price) {
 }
 
 async function handleCheckout() {
+    const user = tg.initDataUnsafe?.user;
+    if (!user || !user.id) {
+        tg.showAlert("Ошибка: Данные пользователя Telegram не найдены. Откройте приложение внутри бота.");
+        return;
+    }
+
+    if (cart.length === 0) {
+        tg.showAlert("Ваша корзина пуста!");
+        return;
+    }
+
+    tg.MainButton.showProgress();
+
     try {
-        await axios.post('/api/orders/initiate', {
-            items: cart.items,
-            user_id: window.Telegram?.WebApp?.initDataUnsafe?.user?.id
+        const response = await fetch(`${API_BASE}/api/orders`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userId: parseInt(user.id),
+                items: cart
+            })
         });
 
-        if (window.Telegram?.WebApp) {
-            window.Telegram.WebApp.close();
+        if (!response.ok) {
+            throw new Error('Ошибка создания заказа на сервере');
+        }
+
+        const data = await response.json();
+
+        if (data.redirect_url) {
+            tg.openTelegramLink(data.redirect_url);
+            tg.close();
+        } else {
+            tg.showAlert("Заказ создан, но ссылка на оплату не получена.");
         }
     } catch (error) {
-        console.error("Ошибка при оформлении:", error);
+        console.error("Ошибка при оформлении заказа:", error);
+        tg.showAlert("Не удалось отправить заказ. Попробуйте позже.");
+    } finally {
+        tg.MainButton.hideProgress();
     }
 }
 
-
-// Пример функции отправки заказа на фронтенде
-async function sendOrder() {
-    const response = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(yourOrderData)
-    });
-
-    const data = await response.json();
-
-    if (data.redirect_url) {
-        // Проверяем, открыто ли приложение ВНУТРИ Telegram (как Mini App)
-        if (window.Telegram && window.Telegram.WebApp) {
-            // Используем встроенный метод Mini App для безопасного перехода
-            window.Telegram.WebApp.openTelegramLink(data.redirect_url);
-        } else {
-            // Если открыто в обычном браузере на ПК/телефоне, просто редиректим
-            window.location.href = data.redirect_url;
+function initApp() {
+    const user = tg.initDataUnsafe?.user;
+    if (user) {
+        const userNameElement = document.getElementById('username');
+        if (userNameElement) {
+            userNameElement.innerText = user.first_name || 'Гурман';
         }
     }
+
+    tg.MainButton.onClick(handleCheckout);
+
+    loadMenu();
 }
-
-const orderId = response.order_id;
-
-const botLink = `https://t.me/mpfoodorderbot?start=order_${orderId}`;
-
-Telegram.WebApp.openTelegramLink(botLink);
-
-Telegram.WebApp.close();
-
 
 document.addEventListener('DOMContentLoaded', initApp);
