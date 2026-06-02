@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9600dff8-515a-4546-af7e-8c1359d3b582" name="Changes" comment="клиент -&gt; сервер">
-      <change beforePath="$PROJECT_DIR$/backend/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/adminka.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/adminka.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,46 +88,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1778695211662</updated>
-    </task>
-    <task id="LOCAL-00002" summary="git commit">
-      <option name="closed" value="true" />
-      <created>1779380221587</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1779380221587</updated>
-    </task>
-    <task id="LOCAL-00003" summary="git commit">
-      <option name="closed" value="true" />
-      <created>1779380401877</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1779380401877</updated>
-    </task>
-    <task id="LOCAL-00004" summary="gadem letsgo">
-      <option name="closed" value="true" />
-      <created>1779381051439</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1779381051439</updated>
-    </task>
-    <task id="LOCAL-00005" summary="prerel">
-      <option name="closed" value="true" />
-      <created>1779382500754</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1779382500754</updated>
-    </task>
-    <task id="LOCAL-00006" summary="release">
-      <option name="closed" value="true" />
-      <created>1779384226985</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1779384226985</updated>
     </task>
     <task id="LOCAL-00007" summary="клиент -&gt; серв">
       <option name="closed" value="true" />
@@ -479,7 +441,47 @@
       <option name="project" value="LOCAL" />
       <updated>1780416077273</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1780416919599</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1780416919599</updated>
+    </task>
+    <task id="LOCAL-00052" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1780420498158</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1780420498158</updated>
+    </task>
+    <task id="LOCAL-00053" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1780420994495</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1780420994495</updated>
+    </task>
+    <task id="LOCAL-00054" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1780421839332</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1780421839332</updated>
+    </task>
+    <task id="LOCAL-00055" summary="клиент -&gt; сервер">
+      <option name="closed" value="true" />
+      <created>1780421962896</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1780421962896</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="UnknownFeatures">

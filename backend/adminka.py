@@ -5,7 +5,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from backend.db import get_db
-from backend.models import Order
+import backend.models as models
 
 admin_router = Router()
 

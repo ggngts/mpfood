@@ -13,10 +13,12 @@ class User(Base):
     is_admin = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
+
 class Product(Base):
     __tablename__ = "products"
 
-    id = Column(Integer, primary_key=True, index=True)
+    # Изменили на String(50), так как ID текстовые (pizza_margarita)
+    id = Column(String(50), primary_key=True, index=True)
     name = Column(String(150), index=True)
     description = Column(Text)
     price = Column(Float)  # Цена в звездах (XTR)
@@ -24,17 +26,20 @@ class Product(Base):
     image_url = Column(String(255), nullable=True)
     is_available = Column(Boolean, default=True)
 
+
 class Order(Base):
     __tablename__ = "orders"
     __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(BigInteger, nullable=False)
-    total_price = Column(Float, nullable=False)
+    total_price = Column(Numeric(10, 2), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     status = Column(String(50), default="pending")
 
-    items = relationship("OrderItem", back_populates="order", cascade="all, delete-orphan")
+    # Защитили связь, указав полный путь к классу OrderItem
+    items = relationship("backend.models.OrderItem", back_populates="order", cascade="all, delete-orphan")
+
 
 class OrderItem(Base):
     __tablename__ = "order_items"
@@ -42,15 +47,19 @@ class OrderItem(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     order_id = Column(Integer, ForeignKey("orders.id", ondelete="CASCADE"), nullable=False)
-    product_id = Column(Integer, nullable=False)
+    # Изменили на String(50), чтобы соответствовать типу Product.id
+    product_id = Column(String(50), nullable=False)
     quantity = Column(Integer, default=1, nullable=False)
-    price = Column(Float, nullable=False)
+#   price = Column(Float, nullable=False)
 
-    order = relationship("Order", back_populates="items")
+    # Защитили связь, указав полный путь к классу Order
+    order = relationship("backend.models.Order", back_populates="items")
+
 
 class Favorite(Base):
     __tablename__ = "favorites"
 
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    product_id = Column(Integer, ForeignKey("products.id", ondelete="CASCADE"), nullable=False)
+    # Изменили на String(50), так как внешний ключ ссылается на измененный products.id
+    product_id = Column(String(50), ForeignKey("products.id", ondelete="CASCADE"), nullable=False)

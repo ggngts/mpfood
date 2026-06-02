@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict
 from typing import List
 from sqlalchemy.orm import Session
 
-from backend.db import engine, Base, get_db
+from backend.db import SessionLocal, engine, Base
 import backend.models as models
 
 load_dotenv()
