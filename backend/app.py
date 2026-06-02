@@ -25,7 +25,7 @@ app.add_middleware(
 
 
 class ProductSchema(BaseModel):
-    id: int
+    id: str
     name: str
     description: str | None = None
     price: float
@@ -35,7 +35,7 @@ class ProductSchema(BaseModel):
 
 
 class CartItem(BaseModel):
-    id: int
+    id: str
     price: float
 
 

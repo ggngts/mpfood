@@ -49,7 +49,7 @@ async function loadMenu() {
                         <p class="hint-text">${product.description || ''}</p>
                         <span class="price">${product.price} Stars</span>
                     </div>
-                    <button class="add-btn" onclick="addToCart(${product.id}, ${product.price})">Добавить</button>
+                    <button class="add-btn" onclick="addToCart('${product.id}', ${product.price})">Добавить</button>
                 </div>
             `;
 
