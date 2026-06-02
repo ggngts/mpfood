@@ -83,26 +83,59 @@ function addToCart(itemId, price) {
     }
 }
 
+async function addToCart(itemId, price) {
+    cart.push({ id: itemId, price: price });
+
+    const totalSum = cart.reduce((sum, item) => sum + item.price, 0);
+    const buttonText = `Оформить заказ (${totalSum} Stars)`;
+
+    // Проверяем, открыты ли мы внутри Телеграма
+    if (tg.initData === "") {
+        // Мы в обычном браузере на ПК — показываем нашу HTML кнопку
+        const browserBtn = document.getElementById('browser-cart-btn');
+        if (browserBtn) {
+            browserBtn.innerText = buttonText;
+            browserBtn.style.display = 'block';
+        }
+    } else {
+        // Мы внутри Telegram — управляем нативной кнопкой
+        tg.MainButton.text = buttonText;
+        if (!tg.MainButton.isVisible) {
+            tg.MainButton.show();
+        }
+    }
+
+    if (tg.HapticFeedback) {
+        tg.HapticFeedback.notificationOccurred('success');
+    }
+}
+
 async function handleCheckout() {
-    const user = tg.initDataUnsafe?.user;
-    if (!user || !user.id) {
-        tg.showAlert("Ошибка: Данные пользователя Telegram не найдены. Откройте приложение внутри бота.");
-        return;
+    let userId = tg.initDataUnsafe?.user?.id;
+
+    // Костыль для тестов: если открыто в браузере, ставим фейковый ID, чтобы бэкенд не ругался
+    if (!userId) {
+        if (tg.initData === "") {
+            userId = 6263303676; // Твой ID для тестов в браузере
+        } else {
+            tg.showAlert("Ошибка: Данные пользователя Telegram не найдены.");
+            return;
+        }
     }
 
     if (cart.length === 0) {
-        tg.showAlert("Ваша корзина пуста!");
+        alert("Ваша корзина пуста!");
         return;
     }
 
-    tg.MainButton.showProgress();
+    if (tg.MainButton.isVisible) tg.MainButton.showProgress();
 
     try {
         const response = await fetch(`${API_BASE}/api/orders`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                userId: parseInt(user.id),
+                userId: parseInt(userId),
                 items: cart
             })
         });
@@ -114,16 +147,24 @@ async function handleCheckout() {
         const data = await response.json();
 
         if (data.redirect_url) {
-            tg.openTelegramLink(data.redirect_url);
-            tg.close();
+            if (tg.initData !== "") {
+                // Если в ТГ — используем нативный переход
+                tg.openTelegramLink(data.redirect_url);
+                tg.close();
+            } else {
+                // Если в браузере ПК — просто выводим ссылку в консоль или переходим по ней
+                console.log("Ссылка на оплату заказа:", data.redirect_url);
+                alert(`Заказ создан! Ссылка на оплату отправлена в консоль (F12). URL: ${data.redirect_url}`);
+                window.location.href = data.redirect_url;
+            }
         } else {
-            tg.showAlert("Заказ создан, но ссылка на оплату не получена.");
+            alert("Заказ создан, но ссылка на оплату не получена.");
         }
     } catch (error) {
         console.error("Ошибка при оформлении заказа:", error);
-        tg.showAlert("Не удалось отправить заказ. Попробуйте позже.");
+        alert("Не удалось отправить заказ. Проверьте консоль бэкенда.");
     } finally {
-        tg.MainButton.hideProgress();
+        if (tg.MainButton.isVisible) tg.MainButton.hideProgress();
     }
 }
 
